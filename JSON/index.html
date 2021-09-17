@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- create some basic information of books and array of books -->
+    <h1 id="count">0</h1>   
+    <button id="btn">Click me</button>
+    <script type="text/javascript">
+        const countElem = document.getElementById("count");
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", onClick);
+        window.addEventListener("load", function(){
+            num = Number(num);
+            if(Number.isNaN(num)){
+                num =0;
+            }
+            countElem.textContent = num;
+        })
+
+        function onClick(e){
+            //increment count
+            // and update the browser
+            let num = Number(countElem.textContent);
+            if(Number.isNaN(num)){
+                alert('not a number');
+                return;
+            }
+            num++;
+            countElem.textContent = num;
+            localStorage.setItem("number",num);
+        }
+    </script>
+</body>
+</html>

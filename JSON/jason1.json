@@ -1,0 +1,14 @@
+{
+    "name":"Jaswant",
+    "location" : "Siddharthnagar",
+    "age": 20,
+    "working" : true,
+    "hobbies" : ["coding","playing","cricket"],
+    "adrress":{
+        "location":"banglore",
+        "PIN":5333440,
+        "data":{
+            "location":"Siddharthnagar"
+        }
+    }
+}
