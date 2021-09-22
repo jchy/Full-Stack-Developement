@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>getElementById</title>
+</head>
+<body>
+    <h1 id="demo">JavaScript getElementById Demonstration</h1>
+    <button onclick="changeText()">Change to Masai</button>
+    <button onclick="changeOriginal()">Change to JS</button>
+    <button onclick="listUsingInnerHtml()">Change to List innerHTML</button>
+    <button onclick="listusingtextContent()">Change to List textContent</button>
+</body>
+
+<script>
+    function changeText(){
+        document.getElementById("demo").innerHTML = "MASAI SCHOOL";
+    }
+    function changeOriginal(){
+        document.getElementById("demo").innerHTML = "JacaScript getElementById Demonstration";
+    }
+    function listUsingInnerHtml(){
+        document.getElementById("demo").innerHTML = "<ul><li>Mango</li><li>Apple</li><li>Orange</li></ul>"
+    }
+    function listusingtextContent(){
+        document.getElementById("demo").textContent = "<ul><li>Mango</li><li>Apple</li><li>Orange</li></ul>"
+    }
+</script>
+</html>

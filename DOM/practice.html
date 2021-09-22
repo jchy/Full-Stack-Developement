@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>JavaScript</div>
+    <div>
+        <input type="text" id="inp">
+    </div>
+    <button onclick="alert1()">Alert Input</button>
+    <button onclick="set()">Set Input</button>
+    <button onclick="show()">Show Input</button>
+    <button onclick="change()">Change to JavaScript</button>
+</body>
+<script>
+    function alert1(){
+        var inp = document.getElementById("inp").value;
+        alert(inp);
+    }
+
+    function set(){
+        document.getElementById("inp").value = "jaswant";
+    }
+
+    function show(){
+        document.querySelector('div').innerHTML = document.getElementById("inp").value;
+        console.log(document.querySelector('div').innerHTML);
+        console.log(document.getElementById("inp").value);
+    }
+
+    function change(){
+        document.querySelector('div').innerHTML = "JavaScript";
+    }
+</script>
+</html>

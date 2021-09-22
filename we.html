@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            border: none;
+            padding: 20px;
+            font-size: 30px;
+            color: white;
+
+        }
+        h1, div{
+            text-align: center;
+        }
+        .bg-green{
+            background-color: green;
+        }
+        .bg-red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>0</h1>
+    <div>
+        <button id="add">+</button>
+        <button id="minus">-</button>
+    </div>
+    <script>
+        var btnAdd = document.querySelector("#add");
+        var btnMinus = document.getElementById("minus");
+        var display = document.getElementsByTagName('h1')[0];
+        var count = 0;
+
+        btnAdd.setAttribute('class', 'bg-green');
+        btnMinus.setAttribute('class', 'bg-red');
+
+        function increment(){
+            count++;
+            display.textContent = count;
+        }
+
+        function decrement(){
+            count--;
+            display.textContent = count;
+        }
+
+        function redbg(){
+            display.setAttribute('class','bg-red white');
+        }
+        function greenbg(){
+            display.setAttribute('class','bg-green white');
+        }
+
+        function clearbg(){
+            var cls = display.removeAttributeNS('class').split(" ");
+            var remCls =[];
+            for(var index= 0; index<cls.length;index++){
+                if(cls[i] != 'white'){
+                    remCls.push(cls[index]);
+                }
+            }
+
+            console.log(remCls);
+            
+
+        }
+
+        btnAdd.addEventListener('click',increment);
+        btnAdd.addEventListener('mouseenter',greenbg);
+        btnAdd.addEventListener('mouseenter',clearbg);
+
+        btnMinus.addEventListener('click',increment);
+        btnMinus.addEventListener('click',redbg);
+        btnMinus.addEventListener('mouseenter',clearbg);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatkal</title>
+</head>
+<body>
+    <!-- train A 10-->
+    <!-- train B 12-->
+    <!-- train C 10-->
+    <!-- people are cancellling tickets 
+    you are waiting for your ticket -->
+
+    <h1>Check for train status</h1>
+    <div style="display: flex">
+        <div id="A"></div>
+        <div id="B"></div>
+        <div id="C"></div>
+    </div>
+
+    <script type="text/javascript">
+    const trainA = ["a","b","c","d","e","f","g","h","i"];
+    const trainB = ["j","k","l","m","n","o","p","q","r"];
+    const trainC = ["s","t","u","v","w","x","y","z","ia"];
+    
+    async function checkAvailability(){
+        let promise = await new Promise(function(resolve,rejected){
+            const id = setInterval(function(){
+                if(trainA.length < 5){
+                resolve(`train A is availabe`);
+                clearInterval(id);
+                }
+                else if(trainB.length < 5){
+                resolve(`train B is availabe`);
+                clearInterval(id);
+                }
+                else if(trainC.length < 5){
+                resolve(`train C is availabe`);
+                clearInterval(id);
+                }
+            },1000)
+        })
+        return promise;
+    }
+
+    function  cancelTicket(){
+        // speed factor
+        let speeds = [
+            Math.floor(Math.random()*5),
+            Math.floor(Math.random()*10),
+            Math.floor(Math.random()*8)
+    ];
+
+    const ids = ["A","B","C"];
+
+    [trainA,trainB,trainC].forEach(function(train, index){
+        setTimeout(function (){
+            train.pop();
+            visualize(train, ids[index])
+        }, 1000*speeds[index])
+     })   
+    }
+
+    function visualize(train, id){
+        const qContainer = document.getElementById(id);
+        qContainer.innerHTML = "";
+        const ul = document.createElement("ul");
+        train.forEach(function(name){
+            const el = document.createElement("li");
+            el.textContent = name;
+            ul.append(el);
+        })
+        qContainer.append(ul);
+    }
+
+    visualize(trainA,"A");
+    visualize(trainB,"B");
+    visualize(trainC,"C");
+
+    var id = setInterval(cancelTicket, 1000);
+
+    checkAvailability()
+    .then(function(res){
+        alert(res);
+    })
+    .catch(function(err){
+        console.log(err);
+    })
+
+    </script>
+
+</body>
+</html>

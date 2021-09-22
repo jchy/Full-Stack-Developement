@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>Practise Creators</title>
+</head>
+
+<body>
+    <div id="headings">
+    </div>
+    <div id="cont">
+    </div>
+    <ul id="vikings">
+        <li>Priyanshu</li>
+    </ul>
+    <button onclick="createH1()">Create H1</button>
+    <button onclick="create2H3()">Create 2 H3</button>
+    <button onclick="createDivs()">Create DIVS</button>
+    <button onclick="add_students()">Add Students</button>
+    <button onclick="add_copy()">Add Copyright</button>
+    <script>
+        var students = ['Ajay', 'Akshay', 'Anusha', 'Chandrashekhara', 'Haren', 'Hasaan', 'Mahesh', 'Mousumi', 'Pavan', 'Rahul', 'Sumanta', 'Venkatesh', 'Vetrival', 'Vijayendra'];
+
+        function createH1(){
+            var parent = document.getElementById('headings');
+            var element = document.createElement('h1');
+            element.textContent = 'MASAI';
+            parent.appendChild(element);
+        }
+        function create2H3(){
+            var parent = document.getElementById('headings');
+            var elem1 = document.createElement('h3');
+            var elem2 = document.createElement('h3');
+            elem1.textContent = 'A Transformation in education!';
+            elem2.textContent = 'Learn to earn, pay when you get';
+            parent.appendChild(elem1);
+            parent.appendChild(elem2);
+
+        }
+
+        function createDivs(){
+            var parent = document.getElementById('cont');
+            for(let i=0;i<10;i++){
+                var element = document.createElement('div');
+                element.textContent = 'Content '+ (i+1);
+                parent.appendChild(element);
+            }
+        }
+
+        function add_students() {
+            var parent = document.getElementById("vikings");
+            for (var i = 0; i < students.length; i++) {
+                var child = document.createElement('li');
+                child.textContent = students[i];
+                if (i % 2 == 0) {
+                    child.style.color = "white";
+                    child.style.backgroundColor = "black";
+                }
+                parent.appendChild(child);
+            }
+        }
+
+        function add_copy() {
+            var parent = document.body;
+            var child = document.createElement('p');
+            child.textContent = '@ masai 2019';
+            var vikings = document.getElementById("vikings");
+            parent.insertBefore(child, vikings);
+        }
+    </script>
+</body>
+
+</html>

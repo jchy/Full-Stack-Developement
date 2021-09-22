@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Only One Div</div>
+    <button onclick="changeContent()" id="btn">Change DOM</button>
+</body>
+<script>
+    count=1;
+    function changeContent(){
+        var parent = document.querySelector('body');
+        var div = document.createElement('div');
+        div.textContent = "Welcome to Masai School " + (count++);
+        var btn = document.getElementById("btn");
+        parent.insertBefore(div,btn);
+    }
+</script>
+</html>

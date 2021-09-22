@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a1{
+            grid-area: ar1;
+        }
+        #a2{
+            grid-area: ar2;
+        }
+        #a3{
+            grid-area: ar3;
+        }
+        #a4{
+            grid-area: ar4;
+        }
+        #a5{
+            grid-area: ar5;
+        }
+        #a6{
+            grid-area: ar6;
+            background-color: tomato;
+        }
+        #a7{
+            grid-area: ar7;
+            background-color: teal;
+        }
+        #a8{
+            grid-area: ar8;
+            background-color: gold;
+        }
+        #a9{
+            grid-area: ar9;
+            background-color: tomato;
+        }
+        #a10{
+            grid-area: ar10;
+            background-color: teal;
+        }
+        #a11{
+            grid-area: ar11;
+            background-color: gold;
+        }
+        .layout{
+            display: grid;
+            height: 800px;
+            /* background-color: yellow; */
+            gap: 10px;
+            grid-template-areas: 'ar1 ar1 ar1'
+                                 'ar2 ar3 ar4'
+                                 'ar5 ar5 ar5'
+                                 'ar6 ar7 ar8'
+                                 'ar9 ar10 ar11';
+        }
+        .box1{
+            height: 5%;
+            background-color: whitesmoke;
+        }
+        .box2{
+            background-color: whitesmoke;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .box2 img{
+            height: 40%;
+            width: 100%;
+            background-color: red;
+        }
+        .box3{
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+        @media screen and (max-width: 800px) {
+            .layout{
+                grid-template-areas: 'ar1 ar1 ar1'
+                                     'ar3 ar2 ar4'
+                                     'ar5 ar5 ar5'
+                                     'ar7 ar6 ar8'
+                                     'ar10 ar9 ar11';  
+            }          
+        }
+        @media screen and (max-width: 600px) {
+            .layout{
+                grid-template-areas: 'ar1 ar1 ar1'
+                                     'ar4 ar3 ar2'
+                                     'ar5 ar5 ar5'
+                                     'ar8 ar7 ar6'
+                                     'ar11 ar10 ar9';  
+            }          
+        }
+        h4{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="box1" id="a1">
+            <h2>CHALLENGES SOLVED WITH SANITY</h2>
+        </div>
+        <div class="box2" id="a2">
+            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhaW58ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80">
+            <p>Eurostar</p>
+            <h3>A better digital experience for millions of travellers.</h3>
+            <h4>Read case study -></h4>
+        </div>
+        <div class="box2" id="a3">
+            <img src="https://i.ytimg.com/vi/ZlJXsqGfTCw/maxresdefault.jpg">
+            <p>Ahm</p>
+            <h3>A better digital experience for millions of travellers.</h3>
+            <h4>Read case study -></h4>
+        </div>
+        <div class="box2" id="a4">
+            <img src="https://www.rd.com/wp-content/uploads/2016/11/08-skydiving-bucket-list-533556289-vuk8691.jpg">
+            <p>XXL</p>
+            <h3>A better digital experience for millions of travellers.</h3>
+            <h4>Read case study -></h4>
+        </div>
+        <div class="box1" id="a5">
+            <h2>EXPLORE SOLUTIONS</h2>
+        </div>
+        <div class="box3" id="a6">
+            <h3>Headline CMS -1</h3>
+            <p>Build cutting-edge web experiences without -> restrictions</p>
+        </div>
+        <div class="box3" id="a7">
+            <h3>Landing page builder</h3>
+            <p>Build cutting-edge web experiences without -> restrictions</p>
+        </div>
+        <div class="box3" id="a8">
+            <h3>Audience Segementation</h3>
+            <p>Build cutting-edge web experiences without -> restrictions</p>
+        </div>
+        <div class="box3" id="a9">
+            <h3>Ecommerce</h3>
+            <p>Build cutting-edge web experiences without -> restrictions</p>
+        </div>
+        <div class="box3" id="a10">
+            <h3>Editorial workflow</h3>
+            <p>Build cutting-edge web experiences without -> restrictions</p>
+        </div>
+        <div class="box3" id="a11">
+            <h3>Multi-dataset architecture</h3>
+            <p>Build cutting-edge web experiences without -> restrictions</p>
+        </div>
+    </div>
+</body>
+</html>

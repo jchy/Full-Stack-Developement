@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <button id='add' onclick="add()">Add New</button>
+  <br />
+  <div>Hover over me</div>
+  <br />
+  <a href="www.masaischool.com">Masai website</a>
+
+</body>
+
+<script>
+    var btn = document.getElementById("add");
+    var div = document.querySelector('div');
+    var a = document.querySelector('a');
+    var body = document.querySelector('body');
+
+    var cnt =1;
+    function addFunc(){
+        var elem = document.createElement('div');
+        elem.innerHTML = "Product "+ (cnt++);
+        elem.style.border = "1px solid black";
+        elem.style.margin = "10px";
+        body.insertBefore(elem, btn);
+    }
+    btn.addEventListener('click',addFunc);
+
+    function hoverFunc(){
+        var p = document.createElement('p');
+        p.textContent = "hovered over the dibv at "+Date();
+        body.appendChild(p);
+    }
+    div.addEventListener('mouseover', hoverFunc);
+
+    function preventFunc(e){
+        e.preventDefault();
+        var p = document.createElement('p');
+        p.textContent = "prevented from going to the website masai.com at "+Date();
+        body.appendChild(p);
+    }
+    a.addEventListener('click', preventFunc);
+</script>
+
+</html>

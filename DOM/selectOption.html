@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select and Option</title>
+</head>
+<body>
+    <div>
+        <select id="select">
+            <option value="Large">L</option>
+            <option value="Medium">M</option>
+            <option value="Small">S</option>
+        </select>
+    </div>
+    <button onclick="show()">Alert Option</button>
+</body>
+
+<script>
+    
+    function show(){
+        alert(document.getElementById("select").value);
+    }
+
+</script>
+</html>

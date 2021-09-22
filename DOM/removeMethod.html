@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Testing</title>
+    <style>
+        p{
+            border: 1px solid red;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label>Name</label>
+    <input type="text" id="name">
+
+    <button onclick="addp()">Add Names</button>
+
+    <button onclick="search()">Search Items</button>
+
+    <button onclick="reset()">Reset</button>
+
+    <div id="nameDiv">
+    
+    </div>
+</body>
+
+<script>
+    var nameArr = [];
+    function addp(){
+        var inpt = document.getElementById("name");
+        var p = document.createElement("p");
+        p.textContent = inpt.value;
+        var parent = document.getElementById("nameDiv");
+        parent.appendChild(p);
+        nameArr.push(inpt.value);
+        inpt.value = "";
+    }
+    console.log(nameArr);
+
+    function search(){
+        var srch = document.getElementById("name").value;
+        var index = -1;
+        for(let i=0;i<nameArr.length;i++){
+            if(nameArr[i]== srch){
+                index = i;
+                break;
+            }
+        }
+        if(index >= 0){
+            var srchResult = document.createElement("p");
+            srchResult.textContent = "Element" +nameArr[index]+" is found at position "+ (index+1);
+            var parent = document.getElementById("nameDiv");
+            parent.appendChild(srchResult);
+        }
+        if(index < 0)
+        {
+            var srchResult = document.createElement("p");
+            srchResult.textContent = "Sorry Element is Not Found";
+            var parent = document.getElementById("nameDiv");
+            parent.appendChild(srchResult);
+        }
+    }
+
+    function reset(){
+        var parent = document.getElementById("nameDiv");
+        var childrenArr = parent.querySelectorAll("p");
+        for(var i=0;i<childrenArr.length;i++){
+            childrenArr[i].remove();
+        }
+    }
+</script>
+
+</html>

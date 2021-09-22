@@ -1,0 +1,263 @@
+
+<!-- Create a mini Js datatype learning app.
+Create buttons namely ‘Objects’, ‘Arrays’, ‘Functions’, ‘Strings’, ‘Numbers’, ‘null’, ‘undefined’ in index.html.
+On clicking any respective button, the user should be able to see 5-6 bullet-point information about that particular datatype.
+For e.g If I click on ‘Object’, I should see information about Js objects like what are objects, how they work, mutability, etc. Be creative! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataType Learning</title>
+    <style>
+        /* applying CSS to the button */
+        .btn{
+            height: 80px;
+            width: 80px;
+            border: 1px solid black;
+            margin: 20px;
+            /* padding: 20px; */
+            color: turquoise;
+            background-color: rgb(223, 15, 15);
+            border-radius: 40px;
+            /* float: left; */
+        }
+        /* Applying CSS to the buttons */
+        #div1{
+            display: none;
+            color: teal;
+        }
+        #div2{
+            display: none;
+            color: tomato;
+        }
+        #div3{
+            display: none;
+            color: yellowgreen;
+        }
+        #div4{
+            display: none;
+            color: crimson;
+        }
+        #div5{
+            display: none;
+            color: darkblue;
+        }
+        #div6{
+            display: none;
+            color: darkorange;
+        }
+        #div7{
+            display: none;
+            color: maroon;
+        }
+        h3{
+            margin-left: 20%;
+            color: purple;
+        }
+        h3+h3{
+            color: springgreen;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>Please Press the desired Button to get their respective properties</h3>
+    <h3>Once you read Press again to hide the properties of that button</h3>
+    <!-- Creating the 7 buttons here -->
+    <button type="submit" onclick="funBtn1()" class="btn" id="id1">Objects</button>
+    <button type="submit" onclick="funBtn2()" class="btn" id="id2">Arrays</button>
+    <button type="submit" onclick="funBtn3()" class="btn" id="id3">Functions</button>
+    <button type="submit" onclick="funBtn4()" class="btn" id="id4">Strings</button>
+    <button type="submit" onclick="funBtn5()" class="btn" id="id5">Numbers</button>
+    <button type="submit" onclick="funBtn6()" class="btn" id="id6">null</button>
+    <button type="submit" onclick="funBtn7()" class="btn" id="id7">undefined</button><br>
+
+    <!-- creating a div1 inside which we will put all the properties of the Object -->
+    <div id="div1">
+        <ul>
+            <li>An object is a collection of properties, and a property is an association between a name (or key) and a value. </li>
+            <li>In addition to objects that are predefined in the browser, you can define your own objects.</li>
+            <li>Objects are mutable.</li>
+            <li>In JavaScript, an object is a standalone entity, with properties and type.</li>
+            <li>Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects.</li>
+        </ul>
+    </div>
+<!-- creating a div2 inside which we will put all the properties of the Arrays -->
+    <div id="div2">
+        <ul>
+            <li>Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations.</li>
+            <li>How Arrays work: The first element of an array is at index 0 , and the last element is at the index value equal to the value of the array's length property minus 1 . Using an invalid index number returns undefined . </li>
+            <li>Neither the length of a JavaScript array nor the types of its elements are fixed. </li>
+            <li>Arrays are mutable.</li>
+            <li>Arrays cannot use strings as element indexes</li>
+        </ul>
+    </div>
+<!-- creating a div3 inside which we will put all the properties of the Function -->
+    <div id="div3">
+        <ul>
+            <li>Functions are one of the fundamental building blocks in JavaScript</li>
+            <li>A function in JavaScript is similar to a procedure</li>
+            <li>A function definition (also called a function declaration, or function statement) </li>
+            <li>Primitive parameters (such as a number) are passed to functions by value;</li>
+            <li>if the function changes the value of the parameter, this change is not reflected globally or in the calling function.</li>
+        </ul>
+    </div>
+
+<!-- creating a div4 inside which we will put all the properties of the String-->
+    <div id="div4">
+        <ul>
+            <li>The String object is used to represent and manipulate a sequence of characters.</li>
+            <li>Strings are useful for holding data that can be represented in text form.</li>
+            <li> to check their length, Use string.length</li>
+            <li>String primitives and string objects can be used interchangeably in most situation</li>
+            <li>Strings are immutable</li>
+        </ul>
+    </div>
+<!-- creating a div5 inside which we will put all the properties of the Number -->
+    <div id="div5">
+        <ul>
+            <li>A number literal like 37 in JavaScript code is a floating-point value, not an integer.</li>
+            <li>Number may also be expressed in literal forms like 0b101, 0o13, 0x0A.</li>
+            <li>Number() : Creates a new Number value.</li>
+            <li>The Number constructor contains constants and methods for working with numbers.</li>
+            <li>Values of other types can be converted to numbers using the Number() function.</li>
+        </ul>
+    </div>
+<!-- creating a div6 inside which we will put all the properties of the null -->
+    <div id="div6">
+        <ul>
+            <li>null is not an identifier for a property of the global object, like undefined can be</li>
+            <li>The value null is written with a literal: null.</li>
+            <li>null is often retrieved in a place where an object can be expected but no object is relevant.</li>
+            <li>The value null represents the intentional absence of any object value.</li>
+            <li>It is one of JavaScript's primitive values and is treated as falsy for boolean operations.</li>
+        </ul>
+    </div>
+<!-- creating a div7 inside which we will put all the properties of the undefined -->
+    <div id="div7">
+        <li>The global undefined property represents the primitive value undefined.</li>
+        <li>It is one of JavaScript's primitive types.</li>
+        <li>undefined is a property of the global object. </li>
+        <li>A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. </li>
+        <li>A variable that has not been assigned a value is of type undefined.</li>
+    </div>
+
+</body>
+<script>
+    // fetching the elements from html into JavaScript
+    var body = document.querySelector('body');
+
+    var btn1 = document.getElementById('id1');
+    var div1 = document.getElementById('div1');
+    // adding onclick event to the Ojbect button
+    var a=1;
+    function funBtn1(){
+        if(a==1){
+            body.insertBefore(div1,btn2);
+            div1.style.display = "inline";
+            return a = 0;
+        }
+        else{
+            div1.style.display = "none";
+            return a = 1;
+        }
+    }
+
+     // adding onclick event to the Arrays button
+    var btn2 = document.getElementById('id2');
+    var div2 = document.getElementById('div2');
+    var b=1;
+    function funBtn2(){
+        if(b==1){
+            body.insertBefore(div2,btn3);
+            div2.style.display = "inline";
+            return b = 0;
+        }
+        else{
+            div2.style.display = "none";
+            return b = 1;
+        }
+    }
+
+     // adding onclick event to the function button
+    var btn3 = document.getElementById('id3');
+    var div3 = document.getElementById('div3');
+    var c=1;
+    function funBtn3(){
+        if(c==1){
+            body.insertBefore(div3,btn4);
+            div3.style.display = "inline";
+            return c = 0;
+        }
+        else{
+            div3.style.display = "none";
+            return c = 1;
+        }
+    }
+ // adding onclick event to the String button
+    var btn4 = document.getElementById('id4');
+    var div4 = document.getElementById('div4');
+    var d=1;
+    function funBtn4(){
+        if(d==1){
+            body.insertBefore(div4,btn5);
+            div4.style.display = "inline";
+            return d = 0;
+        }
+        else{
+            div4.style.display = "none";
+            return d = 1;
+        }
+    }
+ // adding onclick event to the Number button
+    var btn5 = document.getElementById('id5');
+    var div5 = document.getElementById('div5');
+    var e=1;
+    function funBtn5(){
+        if(e==1){
+            body.insertBefore(div5,btn6);
+            div5.style.display = "inline";
+            return e = 0;
+        }
+        else{
+            div5.style.display = "none";
+            return e = 1;
+        }
+    }
+
+    // adding onclick event to the Null button
+    var btn6 = document.getElementById('id6');
+    var div6 = document.getElementById('div6');
+    var f=1;
+    function funBtn6(){
+        if(f==1){
+            body.insertBefore(div6,btn7);
+            div6.style.display = "inline";
+            return f = 0;
+        }
+        else{
+            div6.style.display = "none";
+            return f = 1;
+        }
+    }
+
+    // adding onclick event to the undefined button
+    var btn7 = document.getElementById('id7');
+    var div7 = document.getElementById('div7');
+    var g=1;
+    function funBtn7(){
+        if(g==1){
+            body.appendChild(div7);
+            div7.style.display = "inline";
+            return g = 0;
+        }
+        else{
+            div7.style.display = "none";
+            return g = 1;
+        }
+    }
+
+</script>
+</html>

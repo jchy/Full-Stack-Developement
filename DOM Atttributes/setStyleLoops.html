@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row {
+            padding: 10px;
+            font-size: 16px;
+            color: white
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+    </div>
+    <button onclick="createStudents()">Create</button>
+</body>
+    <script>
+        var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+
+        function createStudents(){
+            var box = document.getElementById("container");
+
+            for(let i=0;i<students.length;i++){
+                var val = 60+(i*5);
+                var bg = 'rgb('+ val + ','+val+','+val+")";
+
+                var elem = document.createElement("div");
+                elem.textContent=students[i] + "-"+ val;
+                elem.setAttribute('class','row');
+                elem.style.backgroundColor = bg;
+                elem.style.fontSize = (16+i) + 'px';
+
+                box.appendChild(elem);
+            }
+        }
+    </script>
+</html>

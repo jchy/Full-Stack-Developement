@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>Layout_4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }
+    .layout {
+            display: grid;
+            gap: 20px;
+            font-size: 40px;
+            width: 800px;
+            margin: auto;
+        }
+        #nav {
+            background-color: yellow;
+            grid-area: nav;
+            height: 80px;
+            font-weight: 600;
+        }
+        #box1 {
+            background-color: red;
+            grid-area: box1;
+            height: 150px;
+            font-size: 20px;
+        }
+        #box2 {
+            background-color: rgb(71, 255, 47);
+            grid-area: box2;
+            height: 150px;
+            font-size: 20px;
+        }
+        #box3 {
+            background-color: rgb(68, 47, 255);
+            grid-area: box3;
+            height: 150px;
+            font-size: 20px;
+        }
+        #box4 {
+            background-color: rgb(109, 109, 109);
+            grid-area: box4;
+            height: 150px;
+            font-size: 20px;
+        }
+        @media screen and (max-width: 600px) {
+            .layout{
+                grid-template-areas: 'nav nav'
+                                     'box1'
+                                     'box2'
+                                     'box3'
+                                     'box4';
+            }
+        }
+        @media screen and (max-width: 992px) {
+            .layout{
+                grid-template-areas: 'nav nav'
+                                     'box1 box2'
+                                     'box3 box4';
+            }
+        }
+        @media screen and (min-width: 992px) {
+            .layout{
+                grid-template-areas: 'nav nav nav nav'
+                                     'box1 box2 box3 box4';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div id="nav">Navigation</div>
+        <div id="box1">Box 1</div>
+        <div id="box2">Box 2</div>
+        <div id="box3">Box 3</div>
+        <div id="box4">Box 4</div>
+    </div>
+</body>
+</html>

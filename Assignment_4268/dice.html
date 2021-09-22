@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var parent = document.querySelector('body');
+        var button = document.createElement('button');
+        button.textContent = "Throw Dice";
+        parent.appendChild(button);
+
+        function randomIntegerFromInterval(min, max) { // min and max included 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        var cube = document.createElement('div');
+        cube.style.height = 50 + 'px';
+        cube.style.width = 50 + 'px';
+       // cube.style.backgroundColor = "red";
+        cube.style.textAlign = "center";
+        cube.style.verticalAlign = "middle";
+        cube.style.lineHeight = 50 + "px";
+        parent.appendChild(cube);
+
+        var count = 0;
+        function dice(){
+            cube.style.border = 1+"px solid black";
+            cube.textContent = randomIntegerFromInterval(1, 6);
+            if(cube.textContent == 1)
+                 cube.style.color = "red";
+            else if(cube.textContent == 6)
+                 cube.style.color = "green";
+            else if(cube.textContent == 2)
+                 cube.style.color = "blue";
+            else if(cube.textContent == 3)
+                 cube.style.color = "grey";
+            else if(cube.textContent == 4)
+                 cube.style.color = "pink";
+            else if(cube.textContent == 5)
+                 cube.style.color = "cyan";
+        }
+
+        button.addEventListener('click', dice);
+    </script>
+</body>
+
+</html>

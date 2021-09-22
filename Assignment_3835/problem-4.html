@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>Practise Deletions</title>
+</head>
+
+<body>
+    <h1 id="id1">First H1</h1>
+    <h1>Second H1</h1>
+    <h3 id="id2">First H3</h3>
+    <h3 id="id3">Second H3</h3>
+    <div id="headings">
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+    </div>
+    <div id="cont">
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+    </div>
+    <hr />
+    <button onclick="removeFirstH1()">Remove H1</button>
+    <button onclick="removeBothH3()">Remove H3</button>
+    <button onclick="removeAllH5()">Remove H5</button>
+    <button onclick="removeRed()">Remove Red</button>
+    <button onclick="remove_divs()">Remove DIVS</button>
+    <script>
+
+        function removeFirstH1(){
+            var el = document.getElementById('id1');
+            el.remove();
+        }
+
+        function removeBothH3(){
+            var el = document.getElementById('id2');
+            el.remove();
+            var el2 = document.getElementById('id3');
+            el2.remove();
+        }
+        
+        function removeAllH5(){
+            var parent = document.getElementById('headings');
+            var children = parent.getElementsByTagName('h5');
+            for(let i=0;i<children.length;i++){
+                children[i].remove();
+            }
+        }
+        function removeRed(){
+            var parent = document.getElementById('cont');
+            var children = parent.getElementsByClassName('red');
+            for(let i=0;i<children.length;i++){
+                children[i].remove();
+            }
+        }
+
+        function remove_divs() {
+            var parent = document.getElementById("cont");
+            var children = parent.getElementsByTagName('div');
+            for (var i = 0; i < children.length; i++) {
+                children[i].remove();
+                console.log(children.length);
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

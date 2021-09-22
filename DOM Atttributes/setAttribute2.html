@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .class1{
+            font-size: 32px;
+            color: red;
+        }
+        .class2{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>First div</div>
+    <div>Second div</div>
+    <p>First para</p>
+    <p>Second para</p>
+    <button onclick="changeStyle()">Change Style</button>
+</body>
+
+<script>
+    var firstDiv = document.querySelector("div");
+    var para = document.querySelector("p");
+    firstDiv.setAttribute('class','class1');
+    
+    para.setAttribute('class','class2');
+</script>
+</html>

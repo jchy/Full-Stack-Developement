@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .even{
+            background-color: black;
+            color: white;
+            padding: 5px;
+        }
+        .odd{
+            background-color: whitesmoke;
+            /* color: white; */
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    </div>
+    <button onclick="createStudents()">Create</button>
+</body>
+<script>
+    var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+
+    function createStudents(){
+     var body = document.querySelector('body');
+     var btn = document.querySelector('button');
+
+     for(let i=0;i< students.length;i++){
+         var div = document.createElement('div');
+         div.textContent = students[i];
+         if(i%2===0){
+             div.setAttribute('class','even');
+         }
+         else{
+             div.setAttribute('class','odd');
+         }
+         body.insertBefore(div,btn);
+     }
+    }
+</script>
+</html>

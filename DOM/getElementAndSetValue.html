@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>Get Element & set Value</title>
+</head>
+<body>
+    <div id="demo" style="color: red;" class="class1">JacaScript</div>
+    <div>
+        <input type="text" id="id1">
+    </div>
+    <button onclick="showInput()">Alert Input</button>
+    <button onclick="setInput()">Set Input</button>
+    <button onclick="chnageInput()">Show Input</button>
+    <button onclick="changeOriginal()">Change to JavaScript</button>
+</body>
+
+<script>
+    function changeOriginal(){
+        document.getElementById("demo").innerHTML = "JavaScript";
+    }
+    function chnageInput(){
+        document.getElementById("demo").innerHTML = document.getElementById("id1").value;
+    }
+    function showInput(){
+        alert(document.getElementById("id1").value);
+    }
+    function setInput(){
+        document.getElementById("id1").value = "Jaswant";
+    }
+</script>
+</html>

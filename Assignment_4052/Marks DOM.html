@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        .form{
+            margin: auto;
+            height: 350px;
+            padding: 20px;
+            text-align: center;
+        }
+        .form div{
+            padding: 5px;
+            display: flex;
+        }
+        .form > div > div{
+            display: block;
+            flex-basis: 20%;
+        }
+        #submit{
+            margin-left: 20px;
+            width: 20%;
+            height: 50px;
+            background-color: black;
+            color: white;
+        }
+        .class1{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="form">
+        <div>
+        <div><label for="name">Student Name</label></div>
+        <div><input type="text" id="name" placeholder=" Your name"></div>
+        </div>
+        <div>
+        <div><label for="age">Age</label></div>
+        <div><input type="number" id="age" placeholder="Your age"></div>
+        </div>
+        <div>
+        <div><label for="name">Science Marks</label></div>
+        <div><input type="text" id="smarks" placeholder="Your Science mark"></div>
+        </div>
+        <div>
+        <div><label for="name">English Marks</label></div>
+        <div><input type="text" id="emarks" placeholder="Your English mark"></div>
+        </div>
+        <div>
+        <div><label for="name">Mathematics Marks</label></div>
+        <div><input type="text" id="mmarks" placeholder="Your Maths mark"></div>
+        </div>
+        <div>
+        <button type="submit" id="submit">Submit</button>
+        </div>
+    </form>
+
+
+    <hr />
+    <table style='border:1px' cellspacing="5" cellspacing="5">
+        <tr>
+            <td>Student Name</td>
+            <td>Student Age</td>
+            <td>Science Marks</td>
+            <td>English Marks</td>
+            <td>Mathematics Marks</td>
+            <td>Total Marks</td>
+            <td>Delete Row</td>
+        </tr>
+    </table>
+    <script>
+        var formElement = document.querySelector('form');
+        var count = 1;
+        function addItem(e) {
+            e.preventDefault();
+            console.log("Submitted");
+            var name = document.getElementById('name').value;
+            var age = document.getElementById("age").value;
+            var smarks = document.getElementById("smarks").value;
+            var emarks = document.getElementById("emarks").value;
+            var mmarks = document.getElementById("mmarks").value;
+            var science = parseInt(document.getElementById("smarks").value);
+            var math = parseInt(document.getElementById("mmarks").value);
+            var eng = parseInt(document.getElementById("emarks").value);
+            var total = math+eng+science;
+            createItem(name, age, smarks, emarks,mmarks,total);
+        }
+        function deleteItem(e) {
+            var parent = e.target.parentNode;
+            parent.remove();
+        }
+        function createItem(name, age, smarks, emarks,mmarks,total) {
+            var tbl = document.querySelector('table');
+            var row = document.createElement("tr");
+            var cell1 = document.createElement("td");
+            cell1.textContent = name;
+            var cell2 = document.createElement("td");
+            cell2.textContent = age;
+            var cell3 = document.createElement("td");
+            cell3.textContent = smarks;
+            var cell4 = document.createElement("td");
+            cell4.textContent = emarks;
+            var cell5 = document.createElement("td");
+            cell5.textContent = mmarks;
+            var cell6 = document.createElement("td");
+            cell6.textContent = total;
+            var cell7 = document.createElement("td");
+            cell7.textContent = "Delete" + count;
+            cell7.addEventListener("click", deleteItem);
+            count++;
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+            row.appendChild(cell4);
+            row.appendChild(cell5);
+            row.appendChild(cell6);
+            row.appendChild(cell7);
+            row.setAttribute('class',"class1");
+            tbl.appendChild(row);
+            tbl.style.border = '1px solid red';
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("smarks").value = "";
+            document.getElementById("emarks").value = "";
+            document.getElementById("mmarks").value = "";
+            total = 0;
+
+        }
+        formElement.addEventListener('submit', addItem);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <title>document</title>
+    <style>
+        .box{
+            height: 350px;
+            background-color:rgb(31, 30, 30);
+            padding: 20px 30px 20px 50px;
+            margin: 10px;
+        }
+        .box > div h4{
+            color: #fff;
+            text-align: center;
+            font-size: 28px;
+        }
+        label{
+            color: #fff;
+        }
+        .box > div+div{
+            height: 50px;
+            float: left;
+            margin-left: 10px;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        label, input{
+            display: block;
+        }
+        input{
+            border-radius: 5px;
+            height: 20px;
+            width: 200px;
+            text-align: center;
+        }
+        .box > div+div > div{
+            padding: 5px;
+            margin-left: 5px;
+        }
+        #mrgn-lft{
+            margin-left:180px;
+        }
+        input[type="submit"]{
+            background-color:chartreuse;
+            font-size: 20px;
+            color: white;
+            margin-top: 15px;
+            padding: 6px;
+            height: 40px;
+            margin-left: 5px;
+        }
+        p{
+            color: rgb(117, 110, 110);
+            font-size: 12px;
+            margin-left: 225px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus odio nihil nobis excepturi ducimus impedit, repellat animi autem. Soluta facilis dignissimos eum sunt nobis?</h4>
+        </div>
+        <div id="mrgn-lft">
+            <label for="name">Username</label>
+            <input type="text" id="name" placeholder="Pic a user name">
+        </div>
+        <div>
+            <label for="name">Email</label>
+            <input type="email" id="name" placeholder="Your email address">
+        </div>
+        <div>
+            <label for="name">Password</label>
+            <input type="text" id="name" placeholder="Create a password">
+        </div>
+        <div>
+            <input type="submit" value="Sign Up For GitHub">
+        </div>
+        <div>
+            <p>By clicking "Sign Up For GitHub" You agree to our terms of service and privacy statement.We will occassionaly send you the account related emails.</p>
+        </div>
+    </div>
+</body>
+</html>

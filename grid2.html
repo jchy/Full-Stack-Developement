@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+.item1{
+        grid-area: area1;
+    }
+.item2{
+        grid-area: area2;
+    }
+.item3{
+        grid-area: area3;
+    }
+.item4{
+        grid-area: area4;
+    }
+.item5{
+        grid-area: area5;
+    }
+.boxes{
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    background-color: #2196F3;
+    /* grid-template-areas: 
+                        'area1 area1 area1'
+                        'area2 area3 area4'
+                        'area2 area5 area5'; */
+}
+.boxes >div{
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 30px;
+    text-align: center;
+}
+@media screen and (min-width: 800px){
+    .boxes{
+        grid-template-areas: 
+                        'area1 area1 area1'
+                        'area2 area3 area4'
+                        'area2 area5 area5';
+    }
+    
+}
+@media screen and (max-width: 800px){
+ .boxes{
+    grid-template-areas: 
+                        'area1 area1 area1'
+                        'area4 area3 area2'
+                        'area4 area5 area5';
+ }
+}
+@media screen and (max-width: 600px){
+ .boxes{
+    grid-template-areas: 
+                        'area4 area3 area2'
+                        'area4 area5 area5'
+                        'area1 area1 area1';
+ }
+}
+</style>
+<body>
+
+<h1>A Webpage Template</h1>
+
+<p>You can use the <em>grid-area</em> property to name grid items.</p>
+<p>You can refer to the name when you set up the grid layout, by using the <em>grid-template-areas</em> property on the grid container.</p>
+<p>This grid layout contains six columns and three rows:</p>
+<div class="boxes">
+    <div class="item1">Header</div>
+    <div class="item2">Menu</div>
+    <div class="item3">Main</div>
+    <div class="item4">Right</div>
+    <div class="item5">Footer</div>
+</div>
+</body>
+</html>
+

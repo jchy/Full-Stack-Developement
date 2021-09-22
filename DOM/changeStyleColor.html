@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change color of text</title>
+</head>
+<body>
+    <p id="id1">Hello Massai</p>
+    <p id="id2">Hello World</p>
+    <button onclick="changeRed()">change To Red</button>
+    <button onclick="changeBlue()">change To Blue</button>
+    <button onclick="green()">change Both to Green</button>
+</body>
+
+<script>
+    function changeRed(){
+        document.getElementById("id1").style.color = "red"; 
+    }
+
+    function changeBlue(){
+        document.getElementById("id2").style.color = "blue";
+    }
+    
+    function green(){
+        var arr = document.getElementsByTagName('p');
+        arr[0].style.color = "green";
+        arr[1].style.color = "green";
+    }
+
+</script>
+
+</html>

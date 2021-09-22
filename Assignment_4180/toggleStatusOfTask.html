@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Status of the Task</title>
+</head>
+<body>
+    <!-- creating a form tag to take task name, status as input and submit it -->
+    <form>
+        <!-- Creating a input tag with label task to take task name as input -->
+        <label>Task</label>
+        <input type="text" id="task">
+
+        <!-- Creating a select tag with option false/true for status of task by default it woukd be false -->
+        <select id="status">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select>
+        <!-- creating submit button -->
+        <input type="submit" value="submit" id="submit">
+    </form>
+
+    <!-- creatiing a table in which we will display the task in list format -->
+    <table style="text-align: center;" cellpadding = "3" border="2">
+        <tr>
+            <td>Task</td>
+            <td>Creation Date</td>
+            <td>Status</td>
+        </tr>
+    </table>
+
+    <script>
+
+        //selecting the submit btn nad maikng its background color black and text white
+        var submitBtn = document.getElementById("submit");
+        submitBtn.style.backgroundColor = "black";
+        submitBtn.style.color = "white";
+
+        //selcting the input tag and making its border 2px solid black
+        var inpt = document.getElementById("task");
+        task.style.border = 2+"px solid black";
+
+        // selecting the form element
+        var fromElem = document.querySelector('form');
+     
+        // this is the constructor funciton that we will use for creating instance of date task and status
+        function Tasks(task, date, status){
+            this.task = task;
+            this.date = date;
+            this.status = status;
+            createTask(this.task, this.date, this.status);
+        }
+
+        // here we will invoke the constructor method with 3 parameters namely task, date and status;
+        function addtask(e){
+            e.preventDefault();
+            console.log("Submitted");
+            var task = document.getElementById('task').value;
+            var status = document.getElementById('status').value;
+            var date = new Date();
+            var t  = new Tasks(task, date, status);
+        }
+
+        // creating the list elements dynamically to store the task, date of creatin and status of the student
+        function createTask(task, date, status){
+            // selceting the table
+            var tbl = document.querySelector('table');
+            // creating the row
+            var row = document.createElement('tr');
+            //crating the row elements (cells of the row)
+            var cell1 = document.createElement('td');
+            cell1.textContent = task;
+            
+            var cell2 = document.createElement('td');
+            cell2.textContent = date;
+            
+            var cell3 = document.createElement('td');
+            // setting default status as false
+            if(status=='')
+               status = 'false';
+            cell3.textContent = status;
+
+            // adding onclick event to the list to envoke toggletask function;
+            cell3.addEventListener("click",function toggletask(){
+                        if(cell3.innerHTML== 'false')
+                            cell3.innerHTML ="true";
+                        else
+                            cell3.innerHTML ="false";
+       });
+            // appending the row elements(cell1,cell2,cell3) to the row
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+
+            //appending row to the table
+            tbl.appendChild(row);
+            document.getElementById("task").value = '';
+            document.getElementById("status").value = '';
+        }
+
+        // envoking the addtask function on submitting the task;
+       fromElem.addEventListener('submit',addtask);
+    </script>
+
+</body>
+</html>

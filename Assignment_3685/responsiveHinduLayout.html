@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindu</title>
+    <style>
+        #a1 {
+            grid-area: ar1;
+        }
+
+        #a2 {
+            grid-area: ar2;
+        }
+
+        #a3 {
+            grid-area: ar3;
+        }
+
+        #a4 {
+            grid-area: ar4;
+        }
+
+        #a5 {
+            grid-area: ar5;
+        }
+
+        #a6 {
+            grid-area: ar6;
+        }
+
+        .layout {
+            height: 600px;
+            display: grid;
+            background-color: whitesmoke;
+            gap: 10px;
+            padding: 10px;
+            grid-template-areas: 'ar1 ar3'
+                'ar1 ar4'
+                'ar1 ar5'
+                'ar2 ar6';
+        }
+
+        .box1 {
+            background-color: rgb(2, 26, 77);
+            color: white;
+        }
+
+        .box1 img {
+            height: 40%;
+            width: 100%;
+        }
+
+        .box2 {
+            background-color: white;
+            color: black;
+        }
+
+        .box2 img {
+            height: 100%;
+            width: 25%;
+            float: left;
+            margin-right: 10px;
+        }
+        @media screen and (max-width:900px){
+            .layout{
+                grid-template-areas: 'ar1 ar1'
+                                     'ar2 ar2'
+                                     'ar3 ar4'
+                                     'ar5 ar6';
+            }
+        }
+        @media screen and (max-width:600px){
+            .layout{
+                grid-template-areas: 'ar1'
+                                     'ar2'
+                                     'ar3'
+                                     'ar4'
+                                     'ar5'
+                                     'ar6';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="box1" id="a1">
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-DAG4_xixQMySPZgteMO3TTz9JB6TNlcIVA&usqp=CAU">
+            <h3>Ahmedabad joint rally with Trump will be historic, says Modi</h3>
+            <h5>KALLOL BHATTACHERJEE</h5>
+            <h5>SUHASINI HAIDER</h5>
+            <P>U.S President to visit Sabarmati Ashram ahead of 'Namaste Trump' event</P>
+        </div>
+        <div class="box2" id="a2">
+            <img
+                src="https://images.news18.com/ibnlive/uploads/2020/07/1596109832_india-us-new.jpg">
+            <h3>NATIONAL</h3>
+            <P>Ahmedabad glitters to welcome Donald Trump</P>
+        </div>
+        <div class="box2" id="a3">
+            <img src="https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2Fb0c032466eb88b109f20d7d9f6b4e0a8%2F0x0.jpg">
+            <h3>THE HUDDLE</h3>
+            <P>The Huddle 2020 | Regional integration pegged to SAARC revival, says Ranil Wickremesinghe</P>
+        </div>
+        <div class="box2" id="a4">
+            <img src="https://images.news18.com/ibnlive/uploads/2020/07/1596109832_india-us-new.jpg">
+            <h3>NATIONAL</h3>
+            <P>Over 10 lakh Kashmir students to don school uniforms after seven months</P>
+        </div>
+
+        <div class="box2" id="a5">
+            <img
+                src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-282849,resizemode-1,msid-74273239/news/economy/foreign-trade/some-restrictions-imposed-on-export-of-medical-equipment-to-china-mea.jpg">
+            <h3>NATIONAL</h3>
+            <P>Some restrictions imposed on export of medical equipment to China, says MEA</P>
+        </div>
+        <div class="box2" id="a6">
+            <img src="https://gumlet.assettype.com/freepressjournal%2Fimport%2F2012%2F11%2FRatan-Tata.jpg?w=1200">
+            <h3>THE HUDDLE</h3>
+            <P>Only a "a microscopic minority" protesting against CAA: Tejaswi Surya</P>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

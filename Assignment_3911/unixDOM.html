@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>Unix</title>
+        <style>
+            .class1{
+                width: 50%;
+                margin: auto;
+                margin-top: 20px;
+                height: 100px;
+            }
+            .class2{
+                width: 50%;
+                height: 220px;
+                margin: auto;
+                background-color: whitesmoke;
+                text-align: center;
+            }
+            .flt{
+                float: left;
+            }
+            .imgwidth{
+                width: 20%;
+                float: left;
+            }
+            .imgtext{
+                width: 70%;
+                padding-left: 10px;
+                font-size: 12px;
+                float: left;
+            }
+            .class3{
+                height: 120px;
+                width: 80%;
+                margin: auto;
+                margin-top: 20px;
+            }
+            .size{
+                height: 100px;
+                width: 100%;
+            }
+            .div3rytclass{
+                text-align: right;
+                border-left: 3px solid black;
+                margin: 2%;
+                width: 45%;
+                /* margin-left: auto; */
+                float: left;
+                /* margin-right: 10px; */
+
+            }
+            .div3lftclass{
+                text-align: left;
+                margin: 5px;
+                float: left;
+                width: 40%;
+                margin: 2%;
+            }
+            .div3class{
+                background-color: salmon;
+                width: 90%;
+                margin: 5%;
+                height: 150px;
+            }
+        </style>
+    </head>
+    <body>
+       <button>Create Page</button>
+    </body>
+
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click',createPageDynamically);
+
+        function createPageDynamically(){
+            var body = document.querySelector('body');
+            // body.style.backgroundColor = 'yellow';
+
+            var div1 = document.createElement('div');
+            var img1 = document.createElement('img');
+            var h1 = document.createElement('h1');
+            var p1 = document.createElement('p');
+            h1.textContent = "Linus Torvald";
+            h1.style.color = 'blue';
+            h1.style.fontSize = '22px';
+            p1.textContent = "The creator of Linux & Git";
+            p1.style.fontSize = '20px';
+            img1.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_01/day_3/resources/images/linus.jpg');
+            img1.setAttribute('class','class1');
+            div1.setAttribute('class','class2');
+            div1.appendChild(img1);
+            div1.appendChild(h1);
+            div1.appendChild(p1);
+            body.appendChild(div1);
+
+
+
+            var div2 = document.createElement('div');
+            div2.setAttribute('class','class3')
+            var divimg = document.createElement('div');
+            var img2 = document.createElement('img');
+            img2.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_01/day_3/resources/images/khan.jpg');
+            divimg.appendChild(img2);
+            var divtext = document.createElement('div');
+            var h1text = document.createElement('h1');
+            h1text.textContent = "Sal Khan";
+            h1text.style.color = 'red';
+            h1text.style.fontSize = '15px';
+            var p1text = document.createElement('p');
+            p1text.textContent = "Salman Khan is the founder of the Khan academy which has a mission of providing a free world-class education for anyone, anywhere.";
+            div2.appendChild(divimg);
+            div2.appendChild(divtext);
+            divtext.setAttribute('class','imgtext');
+            divimg.setAttribute('class','imgwidth');
+            img2.setAttribute('class','size');
+            divtext.appendChild(h1text);
+            divtext.appendChild(p1text);
+            body.appendChild(div2);
+            // div2.style.backgroundColor = "red";
+
+
+            var div3 = document.createElement('div');
+            var div3lft = document.createElement('div');
+            var h3lft = document.createElement('h3');
+            h3lft.textContent = 'Ken Thompson';
+            h3lft.style.color = 'white';
+            var plft = document.createElement('p');
+            plft.textContent = 'Designed and Implemented the originalUnix operating system';
+            var div3ryt = document.createElement('div');
+            var h3ryt = document.createElement('h3');
+            h3ryt.textContent = 'Dennis Ritchie';
+            h3ryt.style.color = 'white';
+            var pryt = document.createElement('p');
+            pryt.textContent = 'Th creator of C Programming Lnguage'
+            div3ryt.setAttribute('class','div3rytclass');
+            div3lft.setAttribute('class','div3lftclass');
+            div3.setAttribute('class','div3class');
+            div3lft.appendChild(h3lft);
+            div3lft.appendChild(plft);
+            div3ryt.appendChild(h3ryt);
+            div3ryt.appendChild(pryt);
+            div3.appendChild(div3lft);
+            div3.appendChild(div3ryt);
+            body.appendChild(div3);  
+        }
+    </script>
+</html>

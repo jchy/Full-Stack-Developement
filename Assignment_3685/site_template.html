@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>Site Template</title>
+    <style>
+        .box{
+            width: 800px;
+            margin: auto;
+            display: grid;
+            gap: 10px;
+        }
+        #top{
+            height: 80px;
+            background-color: red;
+            grid-area: topbar;
+            border-radius: 5px;
+        }
+        #left{
+            height: 400px;
+            background-color: yellowgreen;
+            grid-area: lside;
+            width: 250px;
+            border-radius: 5px;
+        }
+        #right{
+            height: 400px;
+            background-color: teal;
+            grid-area: rside;
+            width: 510px;
+            border-radius: 5px;
+        }
+        @media screen and (min-width: 600px) {
+            .box{
+                grid-template-areas: 'topbar topbar'
+                                     'lside rside';
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="top"></div>
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+</body>
+</html>

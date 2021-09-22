@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div>
+        <p>Random backgroundColor Change</p>
+        <h1>Hello Good Morinig EveryOne</h1>
+    </div>
+</body>
+<script>
+
+    function random(val) {
+        return Math.floor(Math.random()*val);
+    }
+
+    window.addEventListener("resize", function(){
+        var color = 'rgb(' + random(200) + ',' + random(200) + ',' + random(200) + ')';
+            document.getElementById("body").style.backgroundColor = color;
+        });
+</script>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .layout{
+            height: 100px;
+            width: 70%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .box{
+            width: 50%;
+            height: 100px;
+            text-align: center;
+            float: left;
+        }
+        .box > div{
+            background-color: red;
+            height: 80px;
+            width: 150px;
+            margin: auto;
+            font-size: 30px;
+            border: 2px solid black;
+        }
+        .box > div+div{
+            height: 80px;
+            width: 80px;
+            margin: auto;
+        }
+        #div2{
+            background-color: green;
+            font-size: 30px;
+        }
+        .score{
+            height: 100px;
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            
+        }
+        .score > div{
+            height: 80px;
+            width: 30%;
+            background-color: rgb(155, 152, 152);
+            border: 2px solid black;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+        }
+        #btn1{
+            grid-area: a1;
+        }
+        #btn2{
+            grid-area: a2;
+        }
+        #btn3{
+            grid-area: a3;
+        }
+        #btn4{
+            grid-area: a4;
+        }
+        #btn5{
+            grid-area: a5;
+        }
+        #btn6{
+            grid-area: a6;
+        }
+        #btn7{
+            grid-area: a7;
+        }
+        #btn8{
+            grid-area: a8;
+        }
+        #btn9{
+            grid-area: a9;
+        }
+        #btn10{
+            grid-area: a10;
+        }
+        #btn11{
+            grid-area: a11;
+        }
+
+        .grid{
+            display: grid;
+            height: 500px;
+            gap: 10px;
+            width: 25%;
+            margin: auto;
+            margin-top: 100px;
+            grid-template-areas: 'a1 a2 a3'
+                                 'a4 a5 a6'
+                                 'a7 a8 a9'
+                                 '. a10 .'
+                                 'a11 a11 a11';
+        }
+        .grid > button{
+           height: 70px;
+           width: 70px;
+           border: 2px solid black;
+           text-align: center;
+           font-size: 30px;
+           padding: 10px;
+        }
+        #btn10{
+            background-color: purple;
+            color: white;
+        }
+        #btn11{
+            background-color: black;
+            color: white;
+            width: 100%;
+        }
+        .clrgreen{
+            background-color: rgba(86, 151, 11, 0.815);
+        }
+        .clrorng{
+            background-color: rgb(255, 108, 71);
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+            <div class="box"> 
+                <div id="div1">43</div>
+                <p id="p1">MIN</p>
+            </div>
+            <div class="box" > 
+                <div id="div2">2019</div>
+                <p id="p1">MAX</p>
+            </div>
+     </div>
+     <div class="score">
+         <p>SCORE</p>
+          <div id="currScore"> #</div>
+     </div>
+     <div class="grid">
+         <button id="btn1" class="clrgreen" onclick="extractValue(1)">1</button>
+         <button id="btn2" class="clrorng" onclick="extractValue(2)">2</button>
+         <button id="btn3" class="clrgreen" onclick="extractValue(3)">3</button>
+         <button id="btn4" class="clrorng" onclick="extractValue(4)">4</button>
+         <button id="btn5" class="clrorng" onclick="extractValue(5)">5</button>
+         <button id="btn6" class="clrorng" onclick="extractValue(6)">6</button>
+         <button id="btn7" class="clrgreen" onclick="extractValue(7)">7</button>
+         <button id="btn8" class="clrorng" onclick="extractValue(8)">8</button>
+         <button id="btn9" class="clrgreen" onclick="extractValue(9)">9</button>
+         <button id="btn10" onclick="extractValue(0)">0</button>
+         <button id="btn11" onclick="enter()">ENTER</button>
+     </div>
+</body>
+
+ <script>
+     var res = "";
+     var dis = document.getElementById('currScore');
+     function extractValue(val){
+        res+=val;
+        dis.textContent = res;
+     }
+     function enter(){
+        document.getElementById('currScore').innerHTML = res;
+        var currScore = Number(res);
+        var min = document.getElementById('div1').textContent;
+        if(currScore < min)
+        {
+            min = currScore;
+            var min = document.getElementById('div1').textContent;
+            document.getElementById('div1').innerHTML = currScore;
+        }
+        var max = document.getElementById('div2').textContent;
+        if(currScore > max){
+            max = currScore;
+            document.getElementById('div2').innerHTML = max;
+        }
+        res="";
+        dis.textContent=res;
+}
+    
+ </script>
+</html>

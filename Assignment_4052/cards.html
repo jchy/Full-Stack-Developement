@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .class1{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            width: 18%;
+            float: left;
+            margin: 1%;
+            height: 100px;
+        }
+        .cardbtnClass{
+            background-color: yellow;
+            width: 90%;
+            padding: auto;
+            margin-top: 50px;
+        }
+        @media (max-width:600px) {
+            .class1{
+                clear: both;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+        <button onclick="addCards()">Add 5 Cards</button>
+</body>
+
+<script>
+    var parent = document.querySelector('body');
+    var btn = document.querySelector('button');
+    var container = document.getElementById('container');
+    var count = 1;
+    var cnt=1;
+    function addCards(){
+        for(let i=0;i<5;i++){
+            var card = document.createElement('div');
+            card.textContent = count++;
+            card.setAttribute('class','class1');
+            parent.insertBefore(card,btn);
+
+            var cardBtn = document.createElement('button');
+            cardBtn.setAttribute('class','cardbtnClass');
+            cardBtn.textContent = "cardBtn";
+            card.appendChild(cardBtn);
+
+    function printNumberOnTop(){
+                var elem = document.createElement('h1');
+                elem.textContent = cnt++;
+                parent.insertBefore(elem, container);
+            }
+            cardBtn.addEventListener('click',printNumberOnTop);
+        }
+    }
+</script>
+
+</html>
